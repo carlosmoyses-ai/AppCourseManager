@@ -25,6 +25,7 @@ public class StudentModel
     [Required]
     [DataType(DataType.Date, ErrorMessage = "Insira uma data válida no formato dd/mm/yyyy")]
     [Display(Name = "Data de Matrícula", Prompt = "Insira a data de matrícula do aluno")]
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
     public DateTime EnrollmentDate { get; set; }
 
     [JsonIgnore]

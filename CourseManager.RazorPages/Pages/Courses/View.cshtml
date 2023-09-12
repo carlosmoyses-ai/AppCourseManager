@@ -1,0 +1,47 @@
+@page
+@model CourseManager.RazorPages.Pages.Courses.View
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="container">
+    <a asp-page="/Courses/Create" class="btn btn-primary">Cadastrar Curso</a>
+
+    <table class="table table-striped">
+        <thead class="thead">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Courses[0].CourseName)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Courses[0].Description)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Courses[0].StartDate)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Courses[0].EndDate)</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var curseModel in Model.Courses)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(model => curseModel.CourseId)</th>
+                    <td>@Html.DisplayFor(model => curseModel.CourseName)</td>
+                    <td>@Html.DisplayFor(model => curseModel.Description)</td>
+                    <td class="comentario">@Html.DisplayFor(model => curseModel.StartDate)</td>
+                    <td>@Html.DisplayFor(model => curseModel.EndDate)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@curseModel.CourseId">
+                            <i class="bi bi-pencil-square">Editar</i>
+                        </a>
+                        <a asp-page="./Details" asp-route-id="@curseModel.CourseId">
+                            <i class="bi bi-binoculars">Detalhes</i>
+                        </a>
+                        <a asp-page="./Delete" asp-route-id="@curseModel.CourseId">
+                            <i class="bi bi-trash">Deletar</i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

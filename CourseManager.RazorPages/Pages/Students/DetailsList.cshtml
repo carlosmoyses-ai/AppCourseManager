@@ -1,0 +1,24 @@
+@page "{id:int}"
+@model CourseManager.RazorPages.Pages.Students.DetailsList
+@{
+    ViewData["Title"] = "DetailsList";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Curso</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Courses)
+        {
+            <tr>
+                <td>@item.CourseName</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

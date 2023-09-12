@@ -1,0 +1,37 @@
+@page "{id:int?}"
+@model CourseManager.RazorPages.Pages.Students.Edit
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <form method="post" class="form">
+        <div class="form-group">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="Student!.StudentId" />
+            <div class="form-group">
+                <label asp-for="Student!.StudentName" class="form-label">Nome Cliente</label>
+                <input asp-for="Student!.StudentName" class="form-control" />
+                <span asp-validation-for="Student!.StudentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student!.Email" class="form-label">Email</label>
+                <input asp-for="Student!.Email" type="email" class="form-control" />
+                <span asp-validation-for="Student!.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student!.EnrollmentDate" class="form-label"></label>
+                <input asp-for="Student!.EnrollmentDate" type="date" class="form-control" />
+                <span asp-validation-for="Student!.EnrollmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group botao">
+                <input type="submit" class="btn btn-primary" value="Salvar" />
+                <a asp-page="/Students/View" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </div>
+    </form>
+</div>

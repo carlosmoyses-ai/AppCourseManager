@@ -1,0 +1,33 @@
+@page
+@model CourseManager.RazorPages.Pages.Students.Create
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" class="form">
+    <div class="form-group">
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="Students.StudentId" />
+        <div class="form-group">
+            <label asp-for="Students.StudentName" class="form-label"></label>
+            <input asp-for="Students.StudentName" class="form-control" />
+            <span asp-validation-for="Students.StudentName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Students.Email" class="form-label"></label>
+            <input asp-for="Students.Email" class="form-control" />
+            <span asp-validation-for="Students.Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Students.EnrollmentDate" class="form-label"></label>
+            <input asp-for="Students.EnrollmentDate" type="date" class="form-control" />
+            <span asp-validation-for="Students.EnrollmentDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Salvar" />
+            <a asp-page="/Students/View" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </div>
+</form>

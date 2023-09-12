@@ -1,0 +1,47 @@
+@page
+@model CourseManager.RazorPages.Pages.Students.View
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="container">
+    <a asp-page="/Students/Create" class="btn btn-primary">Cadastrar Aluno</a>
+
+    <table class="table table-striped">
+        <thead class="thead">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Students[0].StudentName)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Students[0].Email)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Students[0].EnrollmentDate)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Students[0].Courses)</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var studentModel in Model.Students)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(model => studentModel.StudentId)</th>
+                    <td>@Html.DisplayFor(model => studentModel.StudentName)</td>
+                    <td>@Html.DisplayFor(model => studentModel.Email)</td>
+                    <td>@Html.DisplayFor(model => studentModel.EnrollmentDate)</td>
+                    <td>@Html.DisplayFor(model => studentModel.Courses)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@studentModel.StudentId">
+                            <i class="bi bi-pencil-square">Editar</i>
+                        </a>
+                        <a asp-page="./Details" asp-route-id="@studentModel.StudentId">
+                            <i class="bi bi-binoculars">Detalhes</i>
+                        </a>
+                        <a asp-page="./Delete" asp-route-id="@studentModel.StudentId">
+                            <i class="bi bi-trash">Deletar</i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

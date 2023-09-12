@@ -1,0 +1,32 @@
+@page "{id:int?}"
+@model CourseManager.RazorPages.Pages.Students.Details
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="">
+        <p>
+            <strong>Nome Cliente:</strong>
+            @Model.Student!.StudentName
+        </p>
+        <p>
+            <strong>Email:</strong>
+            @Model.Student!.Email
+        </p>
+        <p>
+            <strong>Data:</strong>
+            @Model.Student!.EnrollmentDate
+        </p>
+        <p>
+            <strong>Cursos:</strong>
+        </p>
+
+        @await Html.PartialAsync("DetailsList.cshtml", Model.Courses)
+
+
+        <a asp-page="/Students/View" class="btn btn-primary">Voltar</a>
+    </div>
+</div>
