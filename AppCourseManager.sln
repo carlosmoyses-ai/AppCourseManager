@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseManager.Api", "CourseManager.Api\CourseManager.Api.csproj", "{B20947E8-F37C-4DC6-832B-9556E96BFCE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseManager.RazorPages", "CourseManager.RazorPages\CourseManager.RazorPages.csproj", "{4C251DD4-36ED-4E06-888E-19D04EBFBE8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,5 +24,9 @@ Global
 		{B20947E8-F37C-4DC6-832B-9556E96BFCE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B20947E8-F37C-4DC6-832B-9556E96BFCE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B20947E8-F37C-4DC6-832B-9556E96BFCE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C251DD4-36ED-4E06-888E-19D04EBFBE8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C251DD4-36ED-4E06-888E-19D04EBFBE8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C251DD4-36ED-4E06-888E-19D04EBFBE8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C251DD4-36ED-4E06-888E-19D04EBFBE8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
