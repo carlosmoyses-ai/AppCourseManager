@@ -1,5 +1,7 @@
 @page "{id:int?}"
 @model CourseManager.RazorPages.Pages.Students.Details
+@using CourseManager.RazorPages.Pages.Students
+
 @{
     ViewData["Title"] = "Details";
 }
@@ -24,9 +26,30 @@
             <strong>Cursos:</strong>
         </p>
 
-        @await Html.PartialAsync("DetailsList.cshtml", Model.Courses)
-
-
+        <table class="table table-striped">
+            <thead class="thead">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Courses[0].CourseName)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Courses[0].Description)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Courses[0].StartDate)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Courses[0].EndDate)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var curseModel in Model.Courses)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(model => curseModel.CourseId)</th>
+                        <td>@Html.DisplayFor(model => curseModel.CourseName)</td>
+                        <td>@Html.DisplayFor(model => curseModel.Description)</td>
+                        <td>@Html.DisplayFor(model => curseModel.StartDate)</td>
+                        <td>@Html.DisplayFor(model => curseModel.EndDate)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </table>
         <a asp-page="/Students/View" class="btn btn-primary">Voltar</a>
     </div>
 </div>
