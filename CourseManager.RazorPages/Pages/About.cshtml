@@ -1,0 +1,33 @@
+﻿@page
+@model AboutModel
+@{
+    ViewData["Title"] = "Sobre";
+}
+<h1>@ViewData["Title"]</h1>
+
+    <h1>Sistema de Gerenciamento de Cursos Online com Minimal API, ASP.NET Razor Pages e Bootstrap</h1>
+    <p>Desenvolva uma plataforma WEB para gerenciar cursos online, utilizando a Minimal API do .NET Core em conjunto com
+        ASP.NET Razor Pages. A estética e a experiência do usuário devem ser aprimoradas com a integração do framework
+        Bootstrap. Utilize o Entity Framework (EF) com SQLite para garantir a persistência dos dados.</p>
+
+    <h2>Informações do Aluno</h2>
+    <ul>
+        <li><strong>IdAluno:</strong> Inteiro, identificador único para cada aluno.</li>
+        <li><strong>NomeAluno:</strong> String, nome completo do aluno.</li>
+        <li><strong>Email:</strong> String, e-mail do aluno.</li>
+        <li><strong>DataInscrição:</strong> DateTime, data em que o aluno se inscreveu no curso.</li>
+        <li><strong>Cursos:</strong> Lista de cursos nos quais o aluno está inscrito.</li>
+    </ul>
+
+    <h2>Informações do Curso</h2>
+    <ul>
+        <li><strong>IdCurso:</strong> Inteiro, identificador único para cada curso.</li>
+        <li><strong>NomeCurso:</strong> String, nome do curso.</li>
+        <li><strong>Descrição:</strong> String, breve descrição sobre o que o curso aborda.</li>
+        <li><strong>DataInício:</strong> DateTime, data de início do curso.</li>
+        <li><strong>DataTérmino:</strong> DateTime, data de término do curso.</li>
+        <li><strong>Alunos:</strong> Lista de alunos inscritos no curso.</li>
+    </ul>
+</body>
+
+</html>
